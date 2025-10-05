@@ -1,0 +1,117 @@
+# =========================================
+# Unreal Engine .gitignore Template
+# =========================================
+
+# Build and intermediate folders
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+Build/
+Script/
+Makefile
+CMakeLists.txt
+
+# Compiled binaries
+*.exe
+*.dll
+*.lib
+*.app
+*.dylib
+*.so
+
+# Cache and logs
+*.pdb
+*.idb
+*.log
+*.sdf
+*.cache
+*.pch
+*.obj
+*.opensdf
+*.VC.db
+*.VC.VC.opendb
+
+# User-specific files
+*.suo
+*.user
+*.userprefs
+*.userosscache
+*.sln.docstates
+*.vs/
+.vscode/
+.idea/
+.vsconfig
+
+# Mac/Unix specific
+.DS_Store
+.AppleDouble
+.LSOverride
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Package files
+*.ipa
+*.apk
+*.aab
+*.appx
+*.appxbundle
+*.xcodeproj/
+*.xcworkspace/
+
+# Unreal-specific folders
+# Keep Config, Source, Content, Plugins
+# Ignore generated data and auto backups
+Saved/
+DerivedDataCache/
+Intermediate/
+Build/Android/
+Build/IOS/
+Build/HoloLens/
+Build/Linux/
+Build/Mac/
+Build/Windows/
+Build/Win64/
+Build/Win32/
+Build/HTML5/
+
+# Ignore generated project files (you can regenerate them via Unreal Editor)
+*.xcodeproj
+*.xcworkspace
+*.sln
+*.suo
+*.opensdf
+*.sdf
+*.VC.db
+*.VC.opendb
+
+# Ignore crash reports
+*_CrashContext.runtime-xml
+
+# Ignore backup and autosave files
+*_Backup_*.umap
+*_Backup_*.uasset
+Autosaves/
+Backup/
+
+# Ignore packaged builds
+/dist/
+Packaged/
+Releases/
+Staging/
+
+# Ignore Marketplace and launcher files
+*.uprojectdirs
+*.umap.saved
+*.uasset.saved
+
+# Ignore custom temporary folders
+tmp/
+temp/
+__pycache__/
+
+# Ignore optional Unreal folders
+Config/DefaultEditorPerProjectUserSettings.ini
+Config/DefaultEditor.ini
+Config/DefaultGameUserSettings.ini
