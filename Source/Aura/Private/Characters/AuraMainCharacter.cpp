@@ -3,9 +3,11 @@
 
 #include "Characters/AuraMainCharacter.h"
 
+#include "AbilitySystemComponent.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "Player/AuraPlayerState.h"
 
 AAuraMainCharacter::AAuraMainCharacter()
 {
@@ -31,4 +33,28 @@ AAuraMainCharacter::AAuraMainCharacter()
 	bUseControllerRotationPitch = false;
 	bUseControllerRotationYaw = false;
 	bUseControllerRotationRoll = false;
+}
+
+void AAuraMainCharacter::PossessedBy(AController* NewController)
+{
+	Super::PossessedBy(NewController);
+
+	// Init ability actor info for the Server
+	InitAbilityActorInfo();
+}
+
+void AAuraMainCharacter::OnRep_PlayerState()
+{
+	Super::OnRep_PlayerState();
+	// Init ability actor info for the Client
+	InitAbilityActorInfo();
+}
+
+void AAuraMainCharacter::InitAbilityActorInfo()
+{
+	AAuraPlayerState* AuraPlayerState = GetPlayerState<AAuraPlayerState>();
+	check(AuraPlayerState);
+	AuraPlayerState->GetAbilitySystemComponent()->InitAbilityActorInfo(AuraPlayerState, this);
+	AbilitySystemComponent = AuraPlayerState->GetAbilitySystemComponent();
+	AttributeSet = AuraPlayerState->GetAttributeSet();
 }
