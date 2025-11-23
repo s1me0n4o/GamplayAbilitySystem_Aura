@@ -45,7 +45,8 @@ public:
 	void InitWidgetControllerParams(const FWidgetControllerParams& WidgetControllerParams);
 
 	virtual void BroadCastInitialValues();
-
+	virtual void BindCallbacksToDependencies();
+	
 protected:
 
 	UPROPERTY(BlueprintReadOnly, Category="Aura|WidgetController")
