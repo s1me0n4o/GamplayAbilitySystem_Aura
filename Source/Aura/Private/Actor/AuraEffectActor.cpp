@@ -36,6 +36,7 @@ void AAuraEffectActor::OnOverlap(UPrimitiveComponent* OverlappedComponent, AActo
 
 		UAuraAttributeSet* MuttableAAS = const_cast<UAuraAttributeSet*>(AuraAttributeSet);
 		MuttableAAS->SetHealth(AuraAttributeSet->GetHealth() + 20.f);
+		MuttableAAS->SetMana(AuraAttributeSet->GetMana() + 20.f);
 		Destroy();
 	}
 }
