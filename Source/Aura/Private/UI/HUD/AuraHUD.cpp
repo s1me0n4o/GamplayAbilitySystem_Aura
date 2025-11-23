@@ -33,7 +33,9 @@ void AAuraHUD::InitOverlay(APlayerController* PC, APlayerState* PS, UAbilitySyst
 
 	FWidgetControllerParams WidgetControllerParams(PC, PS, ASC, AS);
 	UOverlayWidgetController* WidgetController = GetOverlayWidgetController(WidgetControllerParams);
+
 	OverlayWidget->SetWidgetController(WidgetController);
+	WidgetController->BroadCastInitialValues();
 	
 	Widget->AddToViewport();
 }
